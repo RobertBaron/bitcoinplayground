@@ -45,7 +45,7 @@ const addressChecksum = shaExtended2.slice(0, 4);
 console.log("7", addressChecksum.toString('hex'));
 
 // 8 - Add the 4 checksum bytes from stage 7 at the end of extended RIPEMD-160 hash from stage 4. This is the 25-byte binary Bitcoin Address.
-const binary =  Buffer.concat([new Buffer(pubkeyHashWithVersion), addressChecksum]);
+const binary =  Buffer.concat([pubkeyHashWithVersion, addressChecksum]);
 console.log("8", binary.toString('hex'));
 
 // 9 - Convert the result from a byte string into a base58 string using Base58Check encoding. This is the most commonly used Bitcoin Address format
